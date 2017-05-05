@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		body{
+			background-color: #FFFAFA;
+		}
+		#container{
+			margin:5em auto;
+			width: 30em;
+			height: 30em;
+			border-bottom: .15em dashed lightgray;
+			border-radius: 7px;
+			text-align: center;
+			box-shadow: 0 10px 10px #CCC; 
+		}
+		.test{
+			width:0; 
+			height:0; 
+			border: 1em solid; 
+			border-color:#ff3300 #ffffff #ffffff #ffffff;
+		}
+	</style>
+</head>
+
+<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+	<div id="container" class="test">
+		<h2>给我留言</h2>
+		<textarea ng-model="message" cols="50" rows="13"></textarea>
+		<p>剩余字数: <span ng-bind="left()"></span></p>
+		<div class="col-md-1"></div>
+		<button class="btn col-md-3" ng-click="save()">保存</button>
+		<div class="col-md-4 alet"></div>
+		<button class="btn col-md-3" ng-click="clear()">清除</button>
+		<div class="col-md-1"></div>
+	</div>
+</body>
+
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+	var app = angular.module("myNoteApp",[]);
+	app.controller('myNoteCtrl',function ($scope) {
+		$scope.message = '';
+		//统计字数
+		$scope.left = function() { 
+			return 140 - $scope.message.length; 
+		}; 
+		//清空内容
+		$scope.clear = function() {
+			$scope.message = ''; 
+		};
+		//保存留言
+		$scope.save = function() { 
+			if($scope.message.length > 140){
+				$scope.message += '\n' + '字数已经超出上限';
+			}
+			else{
+				$('.alet').css('color','orange').text('已保存！');
+			}
+		 };
+		 $('textarea').on('focus',function() {
+				$('.alet').text(' ');
+		 });
+	});
+</script>
+
+</html>

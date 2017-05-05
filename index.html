@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>欢迎登陆</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+        html{
+            font-size: 100px;
+        }
+        body{
+            margin: 0 auto;
+            background-image: url(images/body_bg.jpg);
+            background-size: cover;
+            -o-background-size: cover;
+            -moz-background-size: cover;
+            -webkit-background-size: cover;
+            background-repeat: no-repeat;
+            opacity: 7;
+        }
+        h3{
+            text-align: center;
+            text-shadow: 0 0 2em black;
+            border-bottom:1px solid #333;
+        }
+        img{
+            width: 2em;
+            height: 2em;
+        }
+        .borderline{
+            background-color: white;
+            margin-top: 6em;
+            padding: 3em;
+            border: 1px solid #CCC;
+            border-radius: 10px; 
+            box-shadow: 0 1em 2em #CCC;
+            -moz-box-shadow: 0 1em 2em #CCC;
+            -webkit-box-shadow: 0 1em 2em #CCC;    
+        }
+        footer{
+            margin-top: 3em;
+            font-size: 1.2em;
+        }
+        span{
+            text-shadow: 0 0 2em black;
+            font-size: 1.2em;
+        }
+        @keyframes myFrame{
+            from{
+                opacity: 0;
+                background-color: orange;
+            }
+            to{
+                opacity: 10;
+                background-color: lightblue;
+            }
+        }
+    .change{
+        animation: myFrame 1s;
+    }
+    </style>
+</head>
+<body>
+<main>
+    <div class="container">
+       <!-- 登陆 -->
+       <div id="sign_in" class="sign" style="display: block;">
+            <div class="col-md-4 column"></div>
+            <div class="col-md-4 column borderline">
+                <h3>Sign<img src="images/signup.ico">In</h3>
+                <form role="form" action="">
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" id="in_Email1" />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" id="in_Password" />
+                    </div>
+                    <button type="submit" class="btn btn-success navbar-left">Sign In</button>
+                </form>
+                <button class="btn navbar-right to_sign_up">没账号？请注册</button>
+            </div>
+            <div class="col-md-4 column"></div>     
+        </div>
+        <!-- 注册 -->
+        <div id="sign_up" style="display: none;" >
+            <div class="col-md-4 column"></div>
+            <div class="col-md-4 column borderline">
+                <h3>Sign<img src="images/signup.ico">Up</h3>
+                <form role="form" action="">
+                    <div class="form-group">
+                         <label>Email address</label>
+                         <input type="email" class="form-control" id="up_Email" />
+                    </div>
+                    <div class="form-group">
+                         <label for="exampleInputPassword1">Password</label>
+                         <input type="password" class="form-control" id="up_Password" />
+                    </div>
+                    <div class="form-group">
+                         <label for="exampleInputPassword1">Password Again</label>
+                         <input type="password" class="form-control" id="up_Password_again" />
+                    </div>
+                    <button type="submit" class="btn btn-success navbar-left">Sign Up</button>
+                </form>
+                <button class="btn navbar-right to_sign_in">有账号，请登录</button>
+            </div>
+            <div class="col-md-4 column"></div>
+        </div>
+
+    </div>
+</main>
+<footer>
+    <!-- 版权信息 -->
+    <div id="author">
+        <div class="copyright" style="text-align: center;">
+            <p>&copy; 2017 Login All rights reserved | Design by<a class="btn" data-toggle="modal"><span>Truman ..</span></a></p>            
+        </div>    
+        <div class="modal fade" id="modal-container" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Truman简介</h4>
+                    </div>
+                    <div class="modal-body">
+                        Truman是一个Web开发爱好者 ..
+                    
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.2.0.js"></script>
+    <script>
+        $(function() {
+            $('.to_sign_in').on('click',function() {
+               $('title').text('欢迎登陆');
+               $('#sign_up').hide(1000);
+               $('#sign_in').show(1000);
+           }); 
+           $('.to_sign_up').on('click',function () {
+               $('title').text('欢迎注册');
+               $('#sign_in').hide(1000);
+               $('#sign_up').show(1000); 
+           })    
+        });
+    </script>    
+</html>
