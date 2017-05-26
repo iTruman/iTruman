@@ -1,0 +1,46 @@
+*{;margin: 0 auto;padding: 0;}
+
+/*顶部导航*/
+#top{position: fixed;height: 4em;width: 100%;background-color:#030303;opacity: 0.5;color: #FFFFFF;}
+.top-nav ul{display: block;list-style: none;margin-right: 2em;}
+.top-nav ul >li{float: right;margin-right: 1em;margin-top:1.2em;}
+.top-nav a{text-decoration: none;color: #FFFFFF;}
+
+/*侧边导航*/
+.side-nav{position: fixed;top: 45%;right: 40px;z-index: 1;}
+.side-nav ul.nav-side-nav{text-align: center;list-style: none;margin: 0;padding-left: 0;}
+.side-nav ul.nav-side-nav >li{display: block;line-height: 1.45em;margin: 0;padding:8px 0;}
+.side-nav li a{display: block;width: 10px;height: 10px;border-radius: 50%;background-color:#EEE0E5;}
+
+/*第一屏*/
+#page-first{height: 35em;width: 100%;background-image: url(../images/bg01.jpg);background-size: 100em auto; background-position: 65em -21em;}
+.first-page .portrait{height: 7em;width: 7em;border-radius: 55px;border: 2px dashed black;position: absolute;left:15%;right: 15%;top: 15em;background-image: url(../images/portrait.jpg);background-size: 7em auto;background-position: 0 -2.5em;}
+.first-page .down{position: absolute;top:35em;left:15%;right:15%;height: 1em;width: 6em;border-radius: 0 0 30px 30px;background-color:#ed6d00;text-align: center;padding: 1em;box-shadow: 0 1px 0 1px #B5B5B5;z-index: 1;}
+
+/*第二屏*/
+#page-second{height: 20em;width: 100%;background-color: #FFFFFF;}
+.list{width:100%;display: flex;text-align: center;}
+.list_child{flex: 1;height:34em;padding-top: 5em;}
+.list_child img{display:block;width: 7rem;height: 7rem;opacity: .5;}
+.list_child img:hover{opacity: 1;transform: scale(1.05,1.05);}
+.list_child .text{line-height: 3em;}
+
+/*第三屏*/
+#page-third{height: 30em;width: 100%;background-image: url(../images/bg00.jpg);background-size: 90em auto;}
+.imgList ul{display: block;list-style: none;}
+.imgList ul >li{margin-left: 20px;float: left;margin-top: 2em;}
+.imgList ul >li >img{width: 15em;height: 25em;border: 2px dashed lightgray;}
+
+/*最后一屏*/
+#page-last{height: 11em;width: 100%;background-color: #FFFCCC;opacity: 0.7;padding: 3em;}
+.info{display: flex;}
+.links{flex: 1;}
+.links ul{display: block;list-style: none;}
+.links ul >li{float: left;margin-left: 1em;}
+.links ul >li >a{text-decoration: none;color:black;}
+address{flex: 1;line-height: 2;}
+.copyright{text-align: center;position: absolute;left:15%;right:15%;padding: 1em;}
+
+
+
+
